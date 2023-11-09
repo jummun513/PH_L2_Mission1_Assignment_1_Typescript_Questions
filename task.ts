@@ -96,6 +96,18 @@ const checkArrayOfNumber = (array: unknown): void => {
 }
 
 
+// problem --> 7
+const findFirstOccurrence = <T>(array: T[], value: T): number => {
+    const index = array.indexOf(value);
+    if (index) {
+        return index;
+    }
+    else {
+        return -1;
+    }
+}
+
+
 // problem --> 8
 interface Product {
     name: string;
