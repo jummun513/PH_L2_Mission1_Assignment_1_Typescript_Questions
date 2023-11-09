@@ -15,7 +15,7 @@ interface Person {
         city: string;
         street: string;
     }
-    phone?: number;
+    phone?: string;
 }
 const getAddressCity = (param: Person): string | undefined => {
     return param.address?.city;
@@ -35,10 +35,10 @@ class Cat {
 }
 const isCat = (param: Cat) => {
     if (param instanceof Cat) {
-        return console.log("yes, it's a cat.");
+        console.log("yes, it's a cat.");
     }
     else {
-        return console.log("no, it's not a cat.");
+        console.log("no, it's not a cat.");
     }
 }
 
@@ -77,7 +77,7 @@ const combinedTwoObject = (car: Car, driver: Driver) => {
 
 
 // problem --> 6
-const checkArrayOfNumber = (array: unknown) => {
+const checkArrayOfNumber = (array: unknown): void => {
     if (Array.isArray(array)) {
         let sum = 0;
         for (const item of array) {
@@ -102,10 +102,10 @@ interface Product {
     price: number;
     quantity: number;
 }
-const totalCost = (shoppingCart: Product[]): number => {
-    let sum = 0;
+const costCalculator = (shoppingCart: Product[]): number => {
+    let totalCost = 0;
     for (const item of shoppingCart) {
-        sum = sum + item.price * item.quantity;
+        totalCost = totalCost + item.price * item.quantity;
     }
-    return sum;
+    return totalCost;
 }
